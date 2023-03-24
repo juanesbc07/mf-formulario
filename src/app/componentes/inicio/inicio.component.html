@@ -1,0 +1,41 @@
+<app-encabezado></app-encabezado>
+<h2 style="margin-left: 36%">FORMULARIO AUTODIAGNOSTICO CONPES 4051</h2>
+<h2 style="margin-left: 25%; margin-top: 1%; font-size: 19px">
+  Digite su Número de identificación Tributaria (NIT) con Dígito de Verificación (DV) sin puntos ni guiones.
+</h2>
+
+<div class="contenedor-col inicio-sesion">
+
+    <mat-form-field appearance="outline">
+      <mat-label >Ingrese NIT: </mat-label>
+      <input matInput placeholder="Ingrese NIT" type="text" maxlength="10" [(ngModel)]="usuario.nit"
+             oninput="this.value = this.value.replace(/[^0-9]/,'')">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Codigo (Asignado por la supersolidaria): </mat-label>
+      <input matInput placeholder="Codigo (Asignado por la supersolidaria)" type="number" [(ngModel)]="usuario.codigo">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre Completo: </mat-label>
+      <input matInput placeholder="Nombre Completo" type="text"
+             style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"
+             [(ngModel)]="usuario.nombreCompleto">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Cargo: </mat-label>
+      <input matInput placeholder="Cargo" type="text"
+             style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"
+             [(ngModel)]="usuario.cargo">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Correo Electronico: </mat-label>
+      <input matInput placeholder="Correo Electronico" type="text"
+             style="text-transform:uppercase;" value=""  onkeyup="javascript:this.value=this.value.toUpperCase();"
+             [(ngModel)]="usuario.correo">
+    </mat-form-field>
+
+  <button [disabled] = 'activarBoton(usuario)'
+          mat-raised-button color="primary" (click)="Ingresar()">Ingresar
+  </button>
+
+</div>

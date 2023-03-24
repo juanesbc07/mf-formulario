@@ -1,0 +1,136 @@
+<!--ENCABEZADO-->
+<app-encabezado></app-encabezado>
+<button mat-stroked-button color="primary" style="margin-left: 6%; margin-top: 2%">{{dimension}}</button>
+
+<!--PREGUNTA SENCILLA-->
+<div *ngIf="preguntaDoble == null || preguntaDoble == false" style="width: 40%; margin-left: 27%; margin-top: 5%">
+  <h2 style="text-align: justify;">
+    {{preguntaActiva}}
+  </h2>
+</div>
+<!--PREGUNTA DOBLE ALTERNA-->
+<div *ngIf="preguntaDoble == true" style="width: 40%; margin-left: 27%; margin-top: 5%">
+  <h2 style="text-align: justify;">
+    {{preguntaAlterna}}
+  </h2>
+</div>
+
+<!--BOTONES SI/NO PREGUNTA SENCILLA-->
+<div class="contenedor-row">
+  <button mat-raised-button color="primary"
+          style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva);">SI</button>
+  <button mat-raised-button color="primary" [disabled] = desactivarNo
+          style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+</div>
+<!--PREGUNTA DOBLE-->
+<div *ngIf="preguntaDoble && !preguntaTriple">
+  <div  style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="text-align: justify;">
+      {{preguntaActiva}}
+    </h2>
+  </div>
+<!--  BOTONES SI/NO PREGUNTA DOBLE-->
+  <div class="contenedor-row" *ngIf="!pregunta12_1 && !pregunta25_1 && !pregunta28_1">
+    <button mat-raised-button color="primary"
+            style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva)">SI</button>
+    <button mat-raised-button color="primary"
+            style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+  </div>
+</div>
+<!--PREGUNTA TRIPLE ALTERNA-->
+<div *ngIf="preguntaDoble && preguntaTriple">
+  <div  style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="text-align: justify;">
+      {{preguntaAlterna2}}
+    </h2>
+  </div>
+  <!--  BOTONES SI/NO PREGUNTA DOBLE-->
+  <div class="contenedor-row">
+    <button mat-raised-button color="primary"
+            style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva)">SI</button>
+    <button mat-raised-button color="primary"
+            style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+  </div>
+</div>
+<!--PREGUNTA TRIPLE-->
+<div *ngIf="preguntaTriple">
+  <div  style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="text-align: justify;">
+      {{preguntaActiva}}
+    </h2>
+  </div>
+  <!--  BOTONES SI/NO PREGUNTA DOBLE-->
+  <div class="contenedor-row">
+    <button mat-raised-button color="primary"
+            style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva)">SI</button>
+    <button mat-raised-button color="primary"
+            style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+  </div>
+</div>
+<!--OPCION MULTIPLE 8-->
+<div *ngIf="pregunta8_1">
+  <div  style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="text-align: justify;">
+      {{preguntaActiva}}
+    </h2>
+  </div>
+  <div style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="font-size: 19px"><mat-checkbox>Objetivos específicos.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Actividades orientadas al resultado.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Metas claramente definidas.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Productos, entregables o servicios</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Indicadores de gestión y de resultado. </mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Cronograma de actividades con responsables.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Mejoramiento continuo de la planeación.   </mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Recursos y responsables.</mat-checkbox></h2>
+  </div>
+</div>
+<!--OPCION UNICA 12-->
+<div *ngIf="pregunta12_1">
+  <div style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="font-size: 19px"><mat-radio-button>Trimestral</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>Semestral</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>Anual</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>Otra</mat-radio-button></h2>
+
+  </div>
+</div>
+<!--OPCION MULTIPLE 25-->
+<div *ngIf="pregunta25_1">
+  <div style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="font-size: 19px"><mat-checkbox>Administración democrática, participativa, autogestionaria y emprendedora.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Adhesión voluntaria, responsable y abierta.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Participación económica de los asociados, en justicia y equidad.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Formación e información para los miembros, de manera permanente, oportuna y progresiva.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Autonomía, autodeterminación y autogobierno.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Servicio a la comunidad.</mat-checkbox></h2>
+    <h2 style="font-size: 19px"><mat-checkbox>Integración con otras organizaciones del mismo sector.</mat-checkbox></h2>
+  </div>
+</div>
+<!--OPCION UNICA 28-->
+<div *ngIf="pregunta28_1">
+  <div style="width: 40%; margin-left: 27%; margin-top: 5%">
+    <h2 style="font-size: 19px"><mat-radio-button>Teniendo en cuenta el total de aportes con corte al periodo anterior.</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>De acuerdo a la participación de cada asociado, respecto al total aportes.</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>Según la Fecha de ingreso del asociado.</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>Se tiene en cuenta deudas en mora.</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>Se tiene en cuenta aportes en mora.</mat-radio-button></h2>
+    <h2 style="font-size: 19px"><mat-radio-button>Otra, cuál?</mat-radio-button></h2>
+    <mat-form-field appearance="outline" style="width: 70%">
+      <mat-label>Descripcion: </mat-label>
+      <input matInput placeholder="Descripcion" type="text" value="">
+    </mat-form-field>
+
+  </div>
+</div>
+<!--BOTONES VOLVER/SIGUIENTE-->
+<div class="contenedor-row">
+  <button mat-raised-button color="primary"
+          style="margin-top: 6%; margin-bottom: 2%; width: 100px; margin-left: 25%">VOLVER</button>
+  <button *ngIf="guardar == null || guardar == false" mat-raised-button color="primary"
+          style="margin-top: 6%; margin-bottom: 2%; width: 100px; margin-left: 33%" (click)="si(preguntaActiva);">SIGUIENTE</button>
+  <button *ngIf="guardar == true" mat-raised-button color="primary"
+          style="margin-top: 6%; margin-bottom: 2%; width: 100px; margin-left: 33%; background-color: #4eb748" (click)="enviar();">GUARDAR</button>
+</div>
+
+

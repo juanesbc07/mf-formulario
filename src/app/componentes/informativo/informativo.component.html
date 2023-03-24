@@ -1,0 +1,17 @@
+<app-encabezado></app-encabezado>
+<button mat-stroked-button color="primary" style="margin-left: 6%; margin-top: 2%">{{dimension}}</button>
+<div style="width: 40%; margin-left: 27%; margin-top: 5%">
+  <h2 style="text-align: justify;">
+    Responda cada una de las preguntas. Algunas preguntas en caso de responder de manera afirmativa automaticamente habilitará una pregunta relacionada con la anterior.Tenga en cuenta que una vez seleccione el botón "GUARDAR" que se encuentra en la ultima pregunta de esta dimensión no podrá editar las repuestas guardadas.
+  </h2>
+</div>
+<h2 style="margin-left: 44%">
+  GRACIAS!
+</h2>
+<div class="contenedor-row">
+  <button mat-raised-button color="primary"
+          style="margin-top: 20px; width: 100px; margin-left: 25%" (click)="volver();">VOLVER</button>
+  <button mat-raised-button color="primary"
+          style="margin-top: 20px; width: 100px; margin-left: 33%" (click)="siguiente();">SIGUIENTE</button>
+
+</div>
