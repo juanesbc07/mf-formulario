@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-preguntas',
@@ -333,14 +335,36 @@ export class PreguntasComponent implements OnInit {
   enviar(){
     if (this.dimension == 'BUEN GOBIERNO'){
       sessionStorage.setItem('PORCENTAJE','25')
+      Swal.fire(
+        'Guardado Exitosamente',
+        '',
+        'success'
+      )
     }else if(this.dimension == 'PLANEACIÓN ESTRATEGICA'){
       sessionStorage.setItem('PORCENTAJE','50')
+      Swal.fire(
+        'Guardado Exitosamente',
+        '',
+        'success'
+      )
     }else if(this.dimension == 'OPERACION'){
       sessionStorage.setItem('PORCENTAJE','75')
+      Swal.fire(
+        'Guardado Exitosamente',
+        '',
+        'success'
+      )
     }else if(this.dimension == 'BALANCE SOCIAL'){
       sessionStorage.setItem('PORCENTAJE','100')
+      Swal.fire(
+        'La información del Formulario de Autodiagnóstico ha sido Guardado Exitosamente',
+        '',
+        'success'
+      )
     }
     this.router.navigate(['dimensiones'])
+
+
   }
 
 }

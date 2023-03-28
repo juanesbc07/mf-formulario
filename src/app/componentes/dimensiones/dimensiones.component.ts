@@ -12,6 +12,8 @@ export class DimensionesComponent implements OnInit {
   planeacion: boolean = true;
   operacion: boolean = true;
   balance: boolean = true;
+  colorVerde: string = "#61bd60"
+  colorRojo: string = "#FF0000FF"
 
 
 
@@ -21,17 +23,21 @@ export class DimensionesComponent implements OnInit {
     this.porcentaje = sessionStorage.getItem('PORCENTAJE');
     if (this.porcentaje == 25){
       this.planeacion = false;
+      document.documentElement.style.setProperty(`--my-var`, this.colorRojo);
     }else if (this.porcentaje == 50){
       this.planeacion = false;
       this.operacion = false;
+      document.documentElement.style.setProperty(`--my-var`, this.colorRojo);
     }else if (this.porcentaje == 75){
       this.planeacion = false;
       this.operacion = false;
       this.balance = false;
+      document.documentElement.style.setProperty(`--my-var`, this.colorRojo);
     }else if (this.porcentaje == 100){
       this.planeacion = false;
       this.operacion = false;
       this.balance = false;
+      document.documentElement.style.setProperty(`--my-var`, this.colorVerde);
     }
 
   }
