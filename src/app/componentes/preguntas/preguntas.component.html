@@ -8,7 +8,8 @@
     {{preguntaActiva}}
   </h2>
 </div>
-<!--PREGUNTA DOBLE ALTERNA-->
+
+<!--PREGUNTA DOBLE TEXTO ALTERNA-->
 <div *ngIf="preguntaDoble == true" style="width: 40%; margin-left: 27%; margin-top: 5%">
   <h2 style="text-align: justify;">
     {{preguntaAlterna}}
@@ -17,12 +18,19 @@
 
 <!--BOTONES SI/NO PREGUNTA SENCILLA-->
 <div class="contenedor-row">
-  <button mat-raised-button color="primary"
-          style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva);">SI</button>
-  <button mat-raised-button color="primary" [disabled] = desactivarNo
-          style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+<!--  <button mat-raised-button color="primary"-->
+<!--          style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva);">SI</button>-->
+<!--  <button mat-raised-button color="primary"-->
+<!--          style="margin-top: 20px; width: 100px; margin-left: 5%; background-color: #9ca5db">NO</button>-->
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-left: 40%;">
+    <mat-button-toggle class="boton-si-ps hola" (click)="si(preguntaActiva);"
+                       checked="{{variableBoton}}" (change)="variableBoton = !variableBoton">SI</mat-button-toggle>
+    <mat-button-toggle class="boton-si-ps" (click)="no(preguntaActiva);"
+                       checked="{{variableBotonNo}}" (change)="variableBotonNo = !variableBotonNo">NO</mat-button-toggle>
+  </mat-button-toggle-group>
 </div>
-<!--PREGUNTA DOBLE-->
+
+<!--PREGUNTA DOBLE TEXTO 2-->
 <div *ngIf="preguntaDoble && !preguntaTriple">
   <div  style="width: 40%; margin-left: 27%; margin-top: 5%">
     <h2 style="text-align: justify;">
@@ -30,11 +38,11 @@
     </h2>
   </div>
 <!--  BOTONES SI/NO PREGUNTA DOBLE-->
-  <div class="contenedor-row" *ngIf="!pregunta12_1 && !pregunta25_1 && !pregunta28_1">
-    <button mat-raised-button color="primary"
-            style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva)">SI</button>
-    <button mat-raised-button color="primary"
-            style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+  <div class="contenedor-row" *ngIf="!pregunta8_1 && !pregunta12_1 && !pregunta25_1 && !pregunta28_1">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-left: 40%;">
+      <mat-button-toggle class="boton-si-ps" (click)="si(preguntaActiva);">SI</mat-button-toggle>
+      <mat-button-toggle class="boton-si-ps" (click)="no(preguntaActiva);" >NO</mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 </div>
 <!--PREGUNTA TRIPLE ALTERNA-->
@@ -46,10 +54,12 @@
   </div>
   <!--  BOTONES SI/NO PREGUNTA DOBLE-->
   <div class="contenedor-row">
-    <button mat-raised-button color="primary"
-            style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva)">SI</button>
-    <button mat-raised-button color="primary"
-            style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-left: 40%;">
+      <mat-button-toggle class="boton-si-ps" (click)="si(preguntaActiva);"
+                         checked="{{variableBoton2}}" (change)="variableBoton2 = !variableBoton2"
+      >SI</mat-button-toggle>
+      <mat-button-toggle class="boton-si-ps">NO</mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 </div>
 <!--PREGUNTA TRIPLE-->
@@ -61,19 +71,14 @@
   </div>
   <!--  BOTONES SI/NO PREGUNTA DOBLE-->
   <div class="contenedor-row">
-    <button mat-raised-button color="primary"
-            style="margin-top: 20px; width: 100px; margin-left: 39%" (click)="si(preguntaActiva)">SI</button>
-    <button mat-raised-button color="primary"
-            style="margin-top: 20px; width: 100px; margin-left: 5%">NO</button>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-left: 40%;">
+      <mat-button-toggle class="boton-si-ps" (click)="si(preguntaActiva);">SI</mat-button-toggle>
+      <mat-button-toggle class="boton-si-ps" (click)="no(preguntaActiva);">NO</mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 </div>
 <!--OPCION MULTIPLE 8-->
 <div *ngIf="pregunta8_1">
-  <div  style="width: 40%; margin-left: 27%; margin-top: 5%">
-    <h2 style="text-align: justify;">
-      {{preguntaActiva}}
-    </h2>
-  </div>
   <div style="width: 40% ; margin-left: 27%; margin-top: 5%">
     <h2 style="font-size: 19px"><mat-checkbox>Objetivos específicos.</mat-checkbox></h2>
     <h2 style="font-size: 19px"><mat-checkbox>Actividades orientadas al resultado.</mat-checkbox></h2>

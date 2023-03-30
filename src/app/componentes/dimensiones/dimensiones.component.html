@@ -4,27 +4,61 @@
   <button mat-raised-button color="primary" style="margin-left: 60%; width: 150px; background-color: #0154a1"
           (click)="salir()">SALIR</button>
 </div>
-<div style="width: 27%; margin-left: 4%">
-  <h2 style="font-size: 17px; text-align: justify;">
-    "Responda cada dimensión en el orden que se muestra en pantalla. Al finalizar cada dimensión se habilitará aútomaticamente la siguiente."
-  </h2>
-  <div class="contenedor-row">
-  <mat-progress-bar mode="determinate" value="{{porcentaje}}" class="barra-progreso"></mat-progress-bar>
-  <h2 style="margin-left: 10px">{{porcentaje}}%</h2>
-  </div>
-  <div class="contenedor-col">
-    <button mat-stroked-button color="primary"
-            (click)="buenGobierno('BUEN GOBIERNO')">BUEN GOBIERNO</button>
-    <button [disabled]="planeacion" mat-stroked-button color="primary" style="margin-top: 10px"
-            (click)="planeacionEstrategica('PLANEACIÓN ESTRATEGICA')">PLANEACIÓN ESTRATEGICA</button>
-    <button [disabled]="operacion" mat-stroked-button color="primary" style="margin-top: 10px"
-            (click)="operacionDimension('OPERACION')">OPERACIÓN</button>
-    <button [disabled]="balance" mat-stroked-button color="primary" style="margin-top: 10px"
-            (click)="operacionDimension('BALANCE SOCIAL')">BALANCE SOCIAL</button>
-    <button mat-raised-button color="primary"
-            style="margin-top: 20px; width: 250px; margin-left: 95px">RESULTADOS AUTODIAGNÓSTICO</button>
+
+<div>
+  <div style="width: 37%; margin-left: 4%">
+    <div style="width: 73%">
+      <h2 style="font-size: 17px; text-align: justify;">
+        "Responda cada dimensión en el orden que se muestra en pantalla. Al finalizar cada dimensión se habilitará aútomaticamente la siguiente."
+      </h2>
+      <div class="contenedor-row">
+        <mat-progress-bar mode="determinate" value="{{porcentaje}}" class="barra-progreso"></mat-progress-bar>
+        <h2 style="margin-left: 10px">{{porcentaje}}%</h2>
+      </div>
+    </div>
+    <div class="contenedor-col">
+      <div class="contenedor-row">
+        <button mat-stroked-button color="primary" (click)="buenGobierno('BUEN GOBIERNO')"
+                class="botDim">BUEN GOBIERNO</button>
+        <button mat-raised-button class="botPdf">
+          <img src="assets/images/pdf.png">
+        </button>
+      </div>
+      <div class="contenedor-row">
+        <button [disabled]="planeacion" mat-stroked-button color="primary" style="margin-top: 10px"
+                (click)="planeacionEstrategica('PLANEACIÓN ESTRATEGICA')"
+                class="botDim">PLANEACIÓN ESTRATEGICA</button>
+        <button mat-raised-button class="botPdf">
+          <img src="assets/images/pdf.png">
+        </button>
+      </div>
+      <div class="contenedor-row">
+        <button [disabled]="operacion" mat-stroked-button color="primary" style="margin-top: 10px"
+                (click)="operacionDimension('OPERACION')" class="botDim">OPERACIÓN</button>
+        <button mat-raised-button class="botPdf">
+          <img src="assets/images/pdf.png">
+        </button>
+      </div>
+      <div class="contenedor-row">
+        <button [disabled]="balance" mat-stroked-button color="primary" style="margin-top: 10px"
+                (click)="operacionDimension('BALANCE SOCIAL')" class="botDim">BALANCE SOCIAL</button>
+        <button mat-raised-button class="botPdf">
+          <img src="assets/images/pdf.png">
+        </button>
+      </div>
+
+
+
+      <button mat-raised-button color="primary"
+              style="margin-top: 20px; width: 250px; margin-left: 14%">RESULTADOS AUTODIAGNÓSTICO</button>
+    </div>
+
+
+
   </div>
 
 </div>
+
+
 
 

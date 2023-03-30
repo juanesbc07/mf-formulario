@@ -57,7 +57,10 @@ export class PreguntasComponent implements OnInit {
 
   dimension: any;
 
-  desactivarNo: any;
+  variableBoton: boolean = false;
+  variableBoton2: boolean = false;
+
+  variableBotonNo: boolean = false;
 
   preguntaActiva: any;
   preguntaDoble: any;
@@ -107,11 +110,13 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr2;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr2:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr3;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr3:
         this.preguntaAlterna = this.preguntaActiva;
@@ -123,22 +128,26 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr4;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr4:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr5;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr5:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr6;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr6:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr7;
         this.guardar = true;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr7:
         this.preguntaAlterna = this.preguntaActiva;
@@ -149,6 +158,7 @@ export class PreguntasComponent implements OnInit {
       case this.pr8:
         this.preguntaAlterna = this.preguntaActiva;
         this.preguntaActiva = this.pr8_1;
+        this.preguntaDoble = true;
         this.pregunta8_1 = true
         console.log(this.preguntaActiva)
         break;
@@ -157,6 +167,7 @@ export class PreguntasComponent implements OnInit {
         this.pregunta8_1 = false;
         this.preguntaActiva = this.pr9;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr9:
         this.preguntaAlterna = this.preguntaActiva;
@@ -168,11 +179,13 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr10;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr10:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr11;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr11:
         this.preguntaAlterna = this.preguntaActiva;
@@ -185,6 +198,7 @@ export class PreguntasComponent implements OnInit {
         this.preguntaActiva = this.pr11_2;
         this.preguntaDoble = true;
         this.preguntaTriple = true;
+        this.variableBoton2 = true;
         console.log(this.preguntaActiva)
         break;
       case this.pr11_2:
@@ -192,6 +206,7 @@ export class PreguntasComponent implements OnInit {
         this.preguntaTriple = false;
         this.preguntaActiva = this.pr12;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr12:
         this.preguntaAlterna = this.preguntaActiva;
@@ -206,6 +221,7 @@ export class PreguntasComponent implements OnInit {
         this.preguntaActiva = this.pr13;
         this.guardar = true;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr13:
         this.preguntaAlterna = this.preguntaActiva;
@@ -223,6 +239,7 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr15;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr15:
         this.preguntaAlterna = this.preguntaActiva;
@@ -234,6 +251,7 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr16;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr16:
         this.preguntaAlterna = this.preguntaActiva;
@@ -245,16 +263,19 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr17;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr17:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr18;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr18:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr19;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr19:
         this.preguntaAlterna = this.preguntaActiva;
@@ -266,27 +287,32 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr20;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr20:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr21;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         this.guardar = true;
         break;
       case this.pr22:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr23;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr23:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr24;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr24:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr25;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr25:
         this.preguntaAlterna = this.preguntaActiva;
@@ -300,6 +326,7 @@ export class PreguntasComponent implements OnInit {
         this.pregunta25_1 = false;
         this.preguntaActiva = this.pr26;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr26:
         this.preguntaAlterna = this.preguntaActiva;
@@ -311,12 +338,14 @@ export class PreguntasComponent implements OnInit {
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr27;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr27:
         this.preguntaDoble = false;
         this.preguntaActiva = this.pr28;
         this.guardar = true;
         console.log(this.preguntaActiva)
+        this.variableBoton = false;
         break;
       case this.pr28:
         this.preguntaAlterna = this.preguntaActiva;
@@ -329,7 +358,229 @@ export class PreguntasComponent implements OnInit {
       default:
         console.log(`Sorry, we are out of`);
     }
+  }
 
+  no(preguntaActiva: string){
+
+    switch (preguntaActiva) {
+      case this.pr1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr2;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr1_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr2;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr2:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr3;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr3:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr4;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr3_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr4;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr4:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr5;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr5:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr6;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr6:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr7;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        this.guardar = true;
+        break;
+        //Dimension 2 //
+      case this.pr8:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr9;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr9:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr10;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr9_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr10;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr10:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr11;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr11:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr12;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr11_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr12;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr11_2:
+        this.preguntaDoble = false;
+        this.preguntaTriple = false;
+        this.preguntaActiva = this.pr12;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr12:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr13;
+        console.log(this.preguntaActiva)
+        this.guardar = true;
+        this.variableBotonNo = false;
+        break;
+        // Dimension 3 //
+      case this.pr14:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr15;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr14_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr15;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr15:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr16;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr15_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr16;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr16:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr17;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr16_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr17;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr17:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr18;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr18:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr19;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr19:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr20;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr19_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr20;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr20:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr21;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        this.guardar = true;
+        break;
+      // Dimension 4 //
+      case this.pr22:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr23;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr23:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr24;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr24:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr25;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr25:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr26;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr26:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr27;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        break;
+      case this.pr26_1:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr27;
+        console.log(this.preguntaActiva)
+        this.variableBoton = false;
+        break;
+      case this.pr27:
+        this.preguntaDoble = false;
+        this.preguntaActiva = this.pr28;
+        console.log(this.preguntaActiva)
+        this.variableBotonNo = false;
+        this.guardar = true;
+        break;
+
+
+
+      default:
+        console.log(`Sorry, we are out of`);
+    }
   }
 
   enviar(){
@@ -363,8 +614,8 @@ export class PreguntasComponent implements OnInit {
       )
     }
     this.router.navigate(['dimensiones'])
-
-
   }
+
+
 
 }
